@@ -1,0 +1,165 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: #d8d8d8;
+	font-family: "Roboto" sans-serif;
+	font-weight: 400;
+	font-size: 100px;
+	text-align: center;
+	line-height: 250px;
+	color: #fff;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1015px;
+	height: 1015px;
+	margin: 0 auto;
+	background-color: #fff;
+	align-content: space-between;
+	justify-content: space-between;
+}
+
+.box {
+	width: 500px;
+	height: 500px;
+	display: inline-block;
+	position: relative;
+}
+
+.box::before {
+	content: "";
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	border: 30px solid #fff;
+	transition: all 2s ease-in-out;
+}
+
+.box__box {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+}
+
+.content__box--box {
+	background-color: #3bbce3;
+}
+
+.content__box--box::before {
+	top: 0;
+	left: 0;
+	background-color: #8ed78f;
+}
+
+.content__box--box:hover::before {
+	transform: translateX(250px);
+	border-radius: 50%;
+}
+
+.content__box--circle {
+	background-color: #ffbf47;
+}
+
+.content__box--circle::before {
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	background-color: #dc91d8;
+}
+
+.content__box--circle:hover::before {
+	transform: translateY(250px);
+	border-radius: 0%;
+}
+
+.content__box--triangle {
+	background-color: #8ed78f;
+}
+
+.content__box--triangle::after {
+	content: "";
+	bottom: 0;
+	left: 250px;
+	width: 0;
+	height: 0;
+	position: absolute;
+	transition: all 2s linear;
+	border-style: solid;
+	border-width: 0 0 250px 250px;
+	border-color: transparent transparent #fff transparent;
+}
+
+.content__box--triangle::before {
+	bottom: 25px;
+	right: 25px;
+	width: 0;
+	height: 0;
+	z-index: 1;
+	border-style: solid;
+	border-width: 0 0 150px 150px;
+	border-color: transparent transparent #ffbf47 transparent;
+}
+
+.content__box--triangle:hover::before {
+	transform: translate(-50px, -50px) rotate(-180deg);
+}
+
+.content__box--triangle:hover::after {
+	transform: rotate(-180deg);
+}
+
+.content__box--thombus {
+	background-color: #dc91d8;
+}
+
+.content__box--thombus::before {
+	background-color: #3bbce3;
+	left: 50px;
+	bottom: 50px;
+	width: 200px;
+	height: 200px;
+	transform: rotate(-45deg);
+}
+
+.content__box--thombus:hover::before {
+	background-color: #3bbce3;
+	left: 50px;
+	bottom: 50px;
+	width: 200px;
+	height: 200px;
+	transform: rotate(0deg);
+}
+
+.top__left {
+	background-color: #ffbf47;
+	right: 0;
+	bottom: 0;
+}
+
+.top__right {
+	background-color: #3bbce3;
+	left: 0;
+	bottom: 0;
+}
+
+.down__left {
+	background-color: #8ed78f;
+	top: 0;
+	right: 0;
+}
+
+.down__right {
+	background-color: #dc91d8;
+	left: 0;
+	right: 0;
+}
